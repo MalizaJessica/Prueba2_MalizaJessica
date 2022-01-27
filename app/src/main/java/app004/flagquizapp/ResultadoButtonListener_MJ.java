@@ -6,11 +6,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class ResultadoButtonListener_Bandera implements OnClickListener {
-    private MainActivityFragment_Bandera mainActivityFragmentBandera;
+public class ResultadoButtonListener_MJ implements OnClickListener {
+    private MainActivityFragment_MJ mainActivityFragmentBandera;
     private Handler handler;
 
-    public ResultadoButtonListener_Bandera(MainActivityFragment_Bandera mainActivityFragmentBandera) {
+    public ResultadoButtonListener_MJ(MainActivityFragment_MJ mainActivityFragmentBandera) {
         this.mainActivityFragmentBandera = mainActivityFragmentBandera;
         this.handler = new Handler();
     }
@@ -31,13 +31,13 @@ public class ResultadoButtonListener_Bandera implements OnClickListener {
             this.mainActivityFragmentBandera.disableButtons();
 
             if (this.mainActivityFragmentBandera.getQuizViewModel().getCorrectAnswers()
-                    == LogicaDePreguntas_Bandera.getFlagsInQuiz()) {
-                ResultadosDialogFragment_Bandera quizResults = new ResultadosDialogFragment_Bandera();
+                    == LogicaDePreguntas_MJ.getFlagsInQuiz()) {
+                ResultadosDialogFragment_MJ quizResults = new ResultadosDialogFragment_MJ();
                 quizResults.setCancelable(false);
                 try {
                     quizResults.show(this.mainActivityFragmentBandera.getChildFragmentManager(), "Quiz Results");
                 } catch (NullPointerException e) {
-                    Log.e(LogicaDePreguntas_Bandera.getTag(),
+                    Log.e(LogicaDePreguntas_MJ.getTag(),
                             "GuessButtonListener: this.mainActivityFragment.getFragmentManager() " +
                                     "returned null",
                             e);

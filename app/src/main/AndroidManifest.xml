@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="app004.flagquizapp.MainActivity_Bandera"
+            android:name="app004.flagquizapp.MainActivity_MJ"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
@@ -21,13 +21,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="app004.flagquizapp.SettingsActivity_Bandera"
+            android:name="app004.flagquizapp.SettingsActivity_MJ"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="app004.flagquizapp.MainActivity_Bandera"
+            android:parentActivityName="app004.flagquizapp.MainActivity_MJ"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="app004.flagquizapp.MainActivity_Bandera" />
+                android:value="app004.flagquizapp.MainActivity_MJ" />
         </activity>
     </application>
 

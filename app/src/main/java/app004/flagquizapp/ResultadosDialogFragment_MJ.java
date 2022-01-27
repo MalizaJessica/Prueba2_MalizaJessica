@@ -9,7 +9,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.util.Log;
 
-public class ResultadosDialogFragment_Bandera extends DialogFragment{
+public class ResultadosDialogFragment_MJ extends DialogFragment{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class ResultadosDialogFragment_Bandera extends DialogFragment{
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        final LogicaDePreguntas_Bandera quizViewModel = ViewModelProviders.of(getActivity()).get(LogicaDePreguntas_Bandera.class);
+        final LogicaDePreguntas_MJ quizViewModel = ViewModelProviders.of(getActivity()).get(LogicaDePreguntas_MJ.class);
         int totalGuesses = quizViewModel.getTotalGuesses();
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage(
@@ -29,7 +29,7 @@ public class ResultadosDialogFragment_Bandera extends DialogFragment{
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try{
-                    MainActivityFragment_Bandera quizFragment = (MainActivityFragment_Bandera) getParentFragment();
+                    MainActivityFragment_MJ quizFragment = (MainActivityFragment_MJ) getParentFragment();
                     try{
                         quizFragment.resetQuiz();
                     }catch (Exception e){

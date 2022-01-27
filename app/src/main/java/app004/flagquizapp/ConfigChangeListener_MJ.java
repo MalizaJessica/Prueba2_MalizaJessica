@@ -7,10 +7,10 @@ import android.widget.Toast;
 
 import java.util.Set;
 
-public class ConfigChangeListener_Bandera implements OnSharedPreferenceChangeListener {
-    private MainActivity_Bandera mainActivityBandera;
+public class ConfigChangeListener_MJ implements OnSharedPreferenceChangeListener {
+    private MainActivity_MJ mainActivityBandera;
 
-    public ConfigChangeListener_Bandera(MainActivity_Bandera mainActivityBandera) {
+    public ConfigChangeListener_MJ(MainActivity_MJ mainActivityBandera) {
         this.mainActivityBandera = mainActivityBandera;
     }
 
@@ -20,7 +20,7 @@ public class ConfigChangeListener_Bandera implements OnSharedPreferenceChangeLis
 
         if (key.equals(this.mainActivityBandera.getREGIONS())) {
             this.mainActivityBandera.getQuizViewModel().setGuessRows(sharedPreferences.getString(
-                    MainActivity_Bandera.CHOICES, null));
+                    MainActivity_MJ.CHOICES, null));
             this.mainActivityBandera.getQuizFragment().resetQuiz();
         } else if (key.equals(this.mainActivityBandera.getCHOICES())) {
             Set<String> regions = sharedPreferences.getStringSet(this.mainActivityBandera.getREGIONS(),

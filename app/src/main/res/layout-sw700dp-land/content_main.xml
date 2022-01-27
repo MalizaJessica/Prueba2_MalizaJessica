@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="app004.flagquizapp.SettingsActivityFragment_Bandera"
+        android:name="app004.flagquizapp.SettingsActivityFragment_MJ"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
@@ -36,7 +36,7 @@
 
     <fragment
         android:id="@+id/quizFragment"
-        android:name="app004.flagquizapp.MainActivityFragment_Bandera"
+        android:name="app004.flagquizapp.MainActivityFragment_MJ"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"

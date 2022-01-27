@@ -28,7 +28,7 @@ import android.widget.TextView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
-public class MainActivityFragment_Bandera extends Fragment {
+public class MainActivityFragment_MJ extends Fragment {
 
     private SecureRandom random;
     private Animation shakeAnimation;
@@ -37,12 +37,12 @@ public class MainActivityFragment_Bandera extends Fragment {
     private ImageView flagImageView;
     private TableRow[] guessTableRows;
     private TextView answerTextView;
-    private LogicaDePreguntas_Bandera quizViewModel;
+    private LogicaDePreguntas_MJ quizViewModel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.quizViewModel = ViewModelProviders.of(getActivity()).get(LogicaDePreguntas_Bandera.class);
+        this.quizViewModel = ViewModelProviders.of(getActivity()).get(LogicaDePreguntas_MJ.class);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class MainActivityFragment_Bandera extends Fragment {
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-        OnClickListener guessButtonListener = new ResultadoButtonListener_Bandera(this);
+        OnClickListener guessButtonListener = new ResultadoButtonListener_MJ(this);
         TableLayout answersTableLayout = view.findViewById(R.id.answersTableLayout);
 
         this.random = new SecureRandom();
@@ -71,7 +71,7 @@ public class MainActivityFragment_Bandera extends Fragment {
                     this.guessTableRows[i] = (TableRow) answersTableLayout.getChildAt(i);
                 }
             } catch (ArrayStoreException e) {
-                Log.e(LogicaDePreguntas_Bandera.getTag(),
+                Log.e(LogicaDePreguntas_MJ.getTag(),
                         "Error getting button rows on loop #" + String.valueOf(i), e);
             }
         }
@@ -83,7 +83,7 @@ public class MainActivityFragment_Bandera extends Fragment {
         }
 
         this.questionNumberTextView.setText(
-                getString(app004.flagquizapp.R.string.question, 1, LogicaDePreguntas_Bandera.getFlagsInQuiz()));
+                getString(app004.flagquizapp.R.string.question, 1, LogicaDePreguntas_MJ.getFlagsInQuiz()));
         return view;
     }
 
@@ -107,7 +107,7 @@ public class MainActivityFragment_Bandera extends Fragment {
 
         int flagCounter = 1;
         int numberOfFlags = this.quizViewModel.getFileNameList().size();
-        while (flagCounter <= LogicaDePreguntas_Bandera.getFlagsInQuiz()) {
+        while (flagCounter <= LogicaDePreguntas_MJ.getFlagsInQuiz()) {
             int randomIndex = this.random.nextInt(numberOfFlags);
 
             String filename = this.quizViewModel.getFileNameList().get(randomIndex);
@@ -131,14 +131,14 @@ public class MainActivityFragment_Bandera extends Fragment {
         answerTextView.setText("");
 
         questionNumberTextView.setText(getString(app004.flagquizapp.R.string.question,
-                (quizViewModel.getCorrectAnswers() + 1), LogicaDePreguntas_Bandera.getFlagsInQuiz()));
+                (quizViewModel.getCorrectAnswers() + 1), LogicaDePreguntas_MJ.getFlagsInQuiz()));
 
         try (InputStream stream = assets.open(region + "/" + nextImage + ".png")) {
             Drawable flag = Drawable.createFromStream(stream, nextImage);
             flagImageView.setImageDrawable(flag);
             animate(false);
         } catch (IOException e) {
-            Log.e(LogicaDePreguntas_Bandera.getTag(), "Error Loading " + nextImage, e);
+            Log.e(LogicaDePreguntas_MJ.getTag(), "Error Loading " + nextImage, e);
         }
 
         this.quizViewModel.shuffleFilenameList();
@@ -208,7 +208,7 @@ public class MainActivityFragment_Bandera extends Fragment {
         return answerTextView;
     }
 
-    public LogicaDePreguntas_Bandera getQuizViewModel() {
+    public LogicaDePreguntas_MJ getQuizViewModel() {
         return quizViewModel;
     }
 }

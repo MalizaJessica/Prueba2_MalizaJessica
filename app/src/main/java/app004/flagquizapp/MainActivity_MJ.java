@@ -12,13 +12,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity_Bandera extends AppCompatActivity {
+public class MainActivity_MJ extends AppCompatActivity {
     public static final String CHOICES = "pref_numberOfChoices";
     public static final String REGIONS = "pref_regionsToInclude";
     private boolean deviceIsPhone = true;
     private boolean preferencesChanged = true;
-    private MainActivityFragment_Bandera quizFragment;
-    private LogicaDePreguntas_Bandera quizViewModel;
+    private MainActivityFragment_MJ quizFragment;
+    private LogicaDePreguntas_MJ quizViewModel;
     private OnSharedPreferenceChangeListener preferencesChangeListener;
 
     private void setSharedPreferences() {
@@ -43,8 +43,8 @@ public class MainActivity_Bandera extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.quizViewModel = ViewModelProviders.of(this).get(LogicaDePreguntas_Bandera.class);
-        this.preferencesChangeListener = new ConfigChangeListener_Bandera(this);
+        this.quizViewModel = ViewModelProviders.of(this).get(LogicaDePreguntas_MJ.class);
+        this.preferencesChangeListener = new ConfigChangeListener_MJ(this);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -56,7 +56,7 @@ public class MainActivity_Bandera extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (preferencesChanged) {
-            this.quizFragment = (MainActivityFragment_Bandera) getSupportFragmentManager()
+            this.quizFragment = (MainActivityFragment_MJ) getSupportFragmentManager()
                     .findFragmentById(R.id.quizFragment);
             this.quizViewModel.setGuessRows(PreferenceManager.getDefaultSharedPreferences(this)
                     .getString(CHOICES, null));
@@ -83,7 +83,7 @@ public class MainActivity_Bandera extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent preferencesIntent = new Intent(this, SettingsActivity_Bandera.class);
+        Intent preferencesIntent = new Intent(this, SettingsActivity_MJ.class);
         startActivity(preferencesIntent);
         return super.onOptionsItemSelected(item);
     }
@@ -93,11 +93,11 @@ public class MainActivity_Bandera extends AppCompatActivity {
                 Configuration.SCREENLAYOUT_SIZE_MASK;
     }
 
-    public MainActivityFragment_Bandera getQuizFragment() {
+    public MainActivityFragment_MJ getQuizFragment() {
         return this.quizFragment;
     }
 
-    public LogicaDePreguntas_Bandera getQuizViewModel() {
+    public LogicaDePreguntas_MJ getQuizViewModel() {
         return quizViewModel;
     }
 

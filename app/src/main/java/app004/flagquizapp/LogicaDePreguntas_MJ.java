@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-public class LogicaDePreguntas_Bandera extends ViewModel {
+public class LogicaDePreguntas_MJ extends ViewModel {
     private static final String TAG = "FlagQuiz Activity";
     private static final int FLAGS_IN_QUIZ = 10;
 
@@ -22,7 +22,7 @@ public class LogicaDePreguntas_Bandera extends ViewModel {
     private int correctAnswers;
     private int guessRows;
 
-    public LogicaDePreguntas_Bandera() {
+    public LogicaDePreguntas_MJ() {
         fileNameList = new ArrayList<>();
         quizCountriesList = new ArrayList<>();
     }
