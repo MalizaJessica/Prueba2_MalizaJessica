@@ -23,11 +23,11 @@ public class LoginActivity_MJ extends AppCompatActivity {
         button_aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (user.getText().toString().equals("user") && clave.getText().toString().equals("123")) {
+                if (((user.getText().toString().equals("user") && clave.getText().toString().equals("123")))||((user.getText().toString().equals("user2") && clave.getText().toString().equals("1234")))) {
                     //Intent intent = new Intent(MainActivity.this, Principal.class);
                     //startActivity(intent);
-                    startActivity(new Intent(LoginActivity_MJ.this, Principal_MJ.class));
-                    Toast.makeText(LoginActivity_MJ.this, "Is OK!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(LoginActivity_MJ.this,MainActivity_MJ.class));
+                    Toast.makeText(LoginActivity_MJ.this, "Bienvenido", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(LoginActivity_MJ.this, "Credenciales incorrectas", Toast.LENGTH_LONG).show();
                 }
@@ -38,8 +38,10 @@ public class LoginActivity_MJ extends AppCompatActivity {
     //
 
     //metodo de siguiente en aceptar, para que se me visualise la siguiente pantalla
-    public  void aceptar(View view){
+  /*  public  void aceptar(View view){
         Intent aceptar = new Intent(this,MainActivity_MJ.class);
         startActivity(aceptar);
     }
+    */
+
 }
