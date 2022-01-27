@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="usuario"
+        android:hint="usuario=user"
         android:inputType="textEmailAddress"
         android:minHeight="48dp" />
 
@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="password"
+        android:hint="password=123"
         android:inputType="textPassword"
         android:minHeight="48dp" />
 
