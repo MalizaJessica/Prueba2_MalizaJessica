@@ -1,54 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="136dp"
-        android:layout_height="41dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="124dp"
-        android:text="CLAVE"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword" />
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:text="LOGIN" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
-        android:layout_width="wrap_content"
+        android:id="@+id/user"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="usuario"
         android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="185dp"
-        tools:layout_editor_absoluteY="112dp" />
+        android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
+        android:id="@+id/clave"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="136dp"
         android:ems="10"
+        android:hint="password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        tools:layout_editor_absoluteX="194dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="136dp"
-        android:layout_height="41dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="36dp"
-        android:text="USUARIO"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddress2" />
+        android:minHeight="48dp" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:id="@+id/button_aceptar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LOGIN"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="355dp" />
-</android.support.constraint.ConstraintLayout>
+        android:text="Aceptar" />
+</LinearLayout>
