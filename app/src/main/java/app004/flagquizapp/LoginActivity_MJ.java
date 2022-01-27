@@ -35,6 +35,7 @@ public class LoginActivity_MJ extends AppCompatActivity {
             }
         });
     }
+    //
 
     //metodo de siguiente en aceptar, para que se me visualise la siguiente pantalla
     public  void aceptar(View view){
